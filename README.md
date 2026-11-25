@@ -2,6 +2,12 @@
 
 Projet universitaire pour une tahouna à El Alia, Bizerte : catalogue de grains, produits traditionnels et fruits secs, en français et en arabe tunisien.
 
+## Voir le site
+
+[Ouvrir Marahi Hanan](https://m7mdsamm.github.io/marahi/)
+
+Le frontend est publié sur GitHub Pages. Chaque mise à jour de la branche `main` déclenche sa construction et son déploiement.
+
 ## Dossiers
 
 - `frontend/` : application React, styles, images et polices locales.
