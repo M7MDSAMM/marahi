@@ -1,0 +1,16 @@
+sequenceDiagram
+  actor Client
+  participant React
+  participant API
+  participant DB as MariaDB
+  Client->>React: Choisir les offres et quantites
+  React->>API: POST /orders (option_id, quantity, contact, request_key)
+  API->>API: Valider contact, session, mode et cle de requete
+  API->>DB: BEGIN + lecture coherente des offres (verrou)
+  DB-->>API: Disponibilite et prix fiables
+  API->>API: Verifier montants ; calculer subtotal, fee, total
+  API->>DB: INSERT order + items snapshots + history
+  API->>DB: COMMIT
+  API-->>React: 201 reference et total confirmes
+  React-->>Client: Confirmation ; vider le panier apres succes
+  Note over API,DB: En cas d'erreur : ROLLBACK, pas de commande partielle

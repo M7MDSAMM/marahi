@@ -1,0 +1,143 @@
+.toast {
+  position: fixed;
+  bottom: 28px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: var(--gold);
+  color: #20180f;
+  border: 1px solid #f3c25b;
+  padding: 13px 25px;
+  border-radius: 9px;
+  box-shadow: 0 8px 35px #0003;
+  font-size: 0.875rem;
+  max-width: calc(100vw - 32px);
+  text-align: center;
+  animation: toastIn 0.2s ease-out;
+}
+[dir="rtl"] .toast {
+  transform: translateX(50%);
+}
+.storage-error {
+  position: fixed;
+  bottom: 82px;
+  inset-inline: 20px;
+  z-index: 120;
+  background: #9b392b;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.contact-form > .demo-notice {
+  background: var(--bg);
+}
+/* Arabic uses the same layout; logical CSS properties handle the direction. */
+[dir="rtl"] {
+  --heading: "Tajawal", sans-serif;
+  letter-spacing: 0;
+}
+[dir="rtl"] h1,
+[dir="rtl"] h2 {
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: -0.045em;
+}
+[dir="rtl"] h1 {
+  font-size: 3rem;
+}
+[dir="rtl"] h2 {
+  font-size: 2rem;
+}
+[dir="rtl"] .hero-copy h1 {
+  font-size: 2.9rem;
+  line-height: 1.7;
+}
+[dir="rtl"] .hero-copy h1 em {
+  font-style: normal;
+  margin-top: 0;
+}
+[dir="rtl"] .eyebrow {
+  letter-spacing: 0.015em;
+  font-size: 0.8rem;
+}
+[dir="rtl"] .hero-wordmark {
+  font-family: "Lora", Georgia, serif;
+  direction: ltr;
+  letter-spacing: -0.055em;
+}
+[dir="rtl"] .hero-wheat {
+  transform: scaleX(-1) rotate(-10deg);
+}
+[dir="rtl"] .hero-description {
+  margin-top: 12px;
+}
+[dir="rtl"] .category-card h3,
+[dir="rtl"] .product-info h3 {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+[dir="rtl"] .hero-inner {
+  padding-top: 35px;
+  min-height: 675px;
+}
+[dir="rtl"] .hero-seal {
+  font-size: 0.6rem;
+  letter-spacing: 0;
+}
+[dir="rtl"] .step-number {
+  font-family: "Lora", Georgia, serif;
+}
+[dir="rtl"] .detail-copy h1 {
+  font-size: 2.6rem;
+}
+[dir="rtl"] .auth-form-wrap h1 {
+  font-size: 2.6rem;
+}
+[dir="rtl"] .auth-brand > p {
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 1.7;
+}
+[dir="rtl"] .admin-heading h1 {
+  font-size: 2rem;
+}
+[dir="rtl"] .section-heading h2 {
+  font-size: 1.8rem;
+}
+[dir="rtl"] .hero-buttons {
+  margin-top: 22px;
+}
+[data-theme="light"] .hero-wheat {
+  opacity: 0.22;
+}
+[data-theme="light"] .hero-wordmark {
+  color: #4e3820;
+}
+[data-theme="light"] .product-card {
+  border-color: var(--line);
+}
+[data-theme="light"] .hero-seal {
+  border-color: #cdb589;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    bottom: 18px;
+  }
+  to {
+    opacity: 1;
+    bottom: 28px;
+  }
+}

@@ -1,0 +1,109 @@
+.topline {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 44px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.topline span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-header {
+  background: var(--bg);
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid transparent;
+}
+.header-inner {
+  max-width: 1380px;
+  padding: 22px 36px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  display: inline-block;
+  flex-shrink: 0;
+}
+.brand .brand-artwork {
+  width: 185px;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.brand-artwork path {
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.main-nav a {
+  font-size: 0.9rem;
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+.main-nav a:after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+.main-nav a.active {
+  color: var(--gold);
+}
+.main-nav a.active:after,
+.main-nav a:hover:after {
+  transform: scaleX(1);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+}
+.language-button {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  line-height: 1.4;
+  border-radius: 6px;
+  color: var(--text);
+}
+.language-button:hover {
+  border-color: var(--gold);
+}
+.basket-link {
+  position: relative;
+}
+.basket-count {
+  position: absolute;
+  top: -1px;
+  inset-inline-end: -1px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #20180f;
+  min-width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border: 2px solid var(--bg);
+}
+.mobile-toggle {
+  display: none;
+}

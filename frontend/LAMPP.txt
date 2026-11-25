@@ -1,0 +1,23 @@
+مكان المشروع المعتمد: /home/lampp/htdocs/marahi-hanan
+
+الفرونت إند — مراحي حنان
+
+src/ : كود React
+public/ : الصور والخطوط
+dist/ : نسخة جاهزة للعرض على Apache
+
+رابط المشروع على Apache الخاص بـ LAMPP:
+http://localhost/marahi-hanan/
+رابط مباشر:
+http://localhost/marahi-hanan/frontend/dist/
+الإدارة:
+http://localhost/marahi-hanan/frontend/dist/#/admin
+
+للتطوير، افتح التيرمنال داخل frontend:
+npm install
+npm run dev
+وبعد التعديلات:
+npm run build
+
+تحليل قاعدة البيانات وSQL موجودان في المجلد المجاور database/.
+الفرونت إند ما زال يستخدم تخزين المتصفح ولم يُربط بباك إند.

@@ -1,0 +1,14 @@
+digraph G {graph [bgcolor="#fffdf8",pad="0.35",nodesep="0.5",ranksep="0.8",splines=spline]; node [fontname="DejaVu Sans",fontsize=11]; edge [fontname="DejaVu Sans",fontsize=9,color="#8c795d",arrowsize=.7];rankdir=LR; node [shape=box,style="rounded,filled",fillcolor="#f5eddf",margin=".2,.15"];
+pending [label="pending\nEn attente"];
+preparing [label="preparing\nConfirmee / en preparation"];
+shipping [label="shipping\nEn livraison"];
+delivered [label="delivered\nLivree ou remise + payee",fillcolor="#e0eee3",peripheries=2];
+cancelled [label="cancelled\nAnnulee, non payee",fillcolor="#f4e2dc",peripheries=2];
+pending -> preparing [label="confirmation de la tahouna"];
+preparing -> shipping [label="delivery seulement"];
+shipping -> delivered [label="remise + encaissement"];
+preparing -> delivered [label="pickup : remise + encaissement"];
+pending -> cancelled [label="motif requis"];
+preparing -> cancelled [label="motif requis"];
+shipping -> cancelled [label="refus avant remise, motif"];
+}

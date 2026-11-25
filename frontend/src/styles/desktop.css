@@ -1,0 +1,88 @@
+@media (max-width: 1190px) {
+  .header-inner {
+    padding-inline: 25px;
+    gap: 16px;
+  }
+  .brand .brand-artwork {
+    width: 155px;
+  }
+  .main-nav {
+    gap: 18px;
+  }
+  .main-nav a {
+    font-size: 0.8rem;
+  }
+  .header-actions {
+    gap: 3px;
+  }
+  .container {
+    width: calc(100% - 64px);
+  }
+  .hero-inner {
+    min-height: 610px;
+  }
+  .hero-copy {
+    margin-inline-start: 35%;
+  }
+  .hero-wordmark {
+    font-size: 12vw;
+  }
+  .hero-copy h1 {
+    font-size: 3.6rem;
+  }
+  .trust-strip > .container {
+    gap: 60px;
+  }
+  .category-card > img {
+    height: 180px;
+  }
+  .product-photo img {
+    height: 230px;
+  }
+  .product-info h3 {
+    font-size: 1.4rem;
+  }
+  .product-detail {
+    gap: 45px;
+  }
+  .detail-copy h1 {
+    font-size: 3.2rem;
+  }
+  .admin-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+  .admin-sidebar {
+    padding-inline: 16px;
+  }
+  .admin-sidebar .brand .brand-artwork {
+    width: 170px;
+  }
+  .admin-main {
+    padding-inline: 25px;
+  }
+  .dashboard-panels {
+    grid-template-columns: 1fr;
+  }
+  .stat-grid {
+    gap: 13px;
+  }
+  .stat-card {
+    padding: 18px;
+  }
+  .stat-card > div {
+    font-size: 0.7rem;
+  }
+  .contact-grid,
+.about-top {
+    gap: 45px;
+  }
+  .account-layout {
+    gap: 35px;
+  }
+  .appointment-page {
+    gap: 45px;
+  }
+  .featured-next {
+    inset-inline-end: -32px;
+  }
+}

@@ -1,0 +1,14 @@
+digraph G {graph [bgcolor="#fffdf8",pad="0.35",nodesep="0.5",ranksep="0.8",splines=spline]; node [fontname="DejaVu Sans",fontsize=11]; edge [fontname="DejaVu Sans",fontsize=9,color="#8c795d",arrowsize=.7];rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#f5eddf",margin=".2,.14"];
+Compte;Categorie;Produit;Variante;Offre [label="Offre\nvariante + poids + prix"];Photo;
+Commande;Ligne;Mouture [label="Demande de mouture"];Message;
+Categorie -> Produit [label="classe",taillabel="1",headlabel="0..N",dir=none];
+Produit -> Variante [label="se decline",taillabel="1",headlabel="1..N*",dir=none];
+Variante -> Offre [label="se vend en",taillabel="1",headlabel="1..N*",dir=none];
+Produit -> Photo [label="est illustre",taillabel="1",headlabel="1..N*",dir=none];
+Compte -> Commande [label="passe",taillabel="0..1",headlabel="0..N",dir=none];
+Commande -> Ligne [label="contient",taillabel="1",headlabel="1..N*",dir=none];
+Offre -> Ligne [label="est achetee",taillabel="1",headlabel="0..N",dir=none];
+Compte -> Mouture [label="demande",taillabel="0..1",headlabel="0..N",dir=none];
+Produit -> Mouture [label="identifie le grain",taillabel="0..1",headlabel="0..N",dir=none];
+Compte -> Message [label="envoie",taillabel="0..1",headlabel="0..N",dir=none];
+}

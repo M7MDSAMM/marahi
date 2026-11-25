@@ -1,0 +1,166 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 75px;
+  margin-top: 40px;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-info > div {
+  position: relative;
+  padding-inline-start: 42px;
+}
+.contact-info svg {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1px;
+  color: var(--accent);
+  width: 21px;
+}
+.contact-info h3 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.contact-info p,
+.contact-info a {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.contact-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.map-card {
+  position: relative;
+  height: 205px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: block;
+  margin-top: 32px;
+}
+.map-pin {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+  color: var(--accent);
+}
+.map-pin strong {
+  margin-top: 8px;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+.map-pin small {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.map-cta {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  text-align: center;
+  background: var(--surface-2);
+  padding: 7px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.contact-appointment {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 26px;
+  color: var(--accent);
+}
+.contact-appointment h3 {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.contact-appointment a {
+  font-size: 0.8rem;
+}
+.contact-form {
+  align-self: start;
+  padding: 33px;
+}
+.contact-form h2 {
+  margin-bottom: 24px;
+}
+.appointment-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.appointment-intro h1 {
+  font-size: 3.8rem;
+}
+.appointment-intro > p:not(.eyebrow) {
+  color: var(--muted);
+  margin-top: 22px;
+  font-size: 0.95rem;
+}
+.appointment-art {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.appointment-art > span {
+  position: absolute;
+  top: 110px;
+  inset-inline-start: 85px;
+  font-size: 3.8rem;
+  color: var(--accent);
+  transform: rotate(-10deg);
+}
+.about-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-top p:not(.eyebrow) {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-block: 22px;
+}
+.about-top .btn {
+  margin-top: 10px;
+}
+.about-top .story-art {
+  height: 450px;
+}
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 32px;
+}
+.value-card {
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.value-card > svg {
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.value-card h3 {
+  font-size: 1.1rem;
+}
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 15px;
+}

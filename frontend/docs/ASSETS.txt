@@ -1,0 +1,14 @@
+VISUELS ACTUELS DU PROJET
+
+public/images/catalog/*.webp : visuels originaux extraits des maquettes fournies par le client. Ils sont réutilisés à sa demande. Aucune nouvelle licence n’est attribuée à ces visuels.
+
+public/images/catalog/bsissa.png
+public/images/catalog/zrir.png
+public/images/catalog/sesame.png
+Ces trois images ont été améliorées à partir des images originales avec l’outil de création d’images intégré : même pot transparent, même angle, même contenu, éclairage et texture plus naturels. Ce sont des visuels illustratifs, et non des photographies authentiques de produits de la boutique. Les originaux .webp restent conservés dans le même dossier.
+
+Le fond d’épis SVG reprend les trois groupes de l’emblème existant dans LogoArtwork.jsx, avec une palette discrète adaptée au thème. Le logo de navigation n’a pas été modifié.
+
+Icônes : Font Awesome Free 6.7.2 par Fonticons, Inc. CC BY 4.0 pour les icônes SVG, MIT pour le code. Licence locale : public/licenses/fontawesome-LICENSE.txt. Source : https://github.com/FortAwesome/Font-Awesome/tree/6.7.2
+
+Polices locales : Lora, Nunito Sans et Tajawal. Licences OFL dans public/fonts/licenses.

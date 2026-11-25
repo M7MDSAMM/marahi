@@ -1,0 +1,175 @@
+erDiagram
+  categories {
+    int id PK
+    varchar code UK
+    varchar name_fr
+    varchar name_ar
+    varchar image_path
+    smallint sort_order
+    tinyint is_active
+  }
+  contact_messages {
+    int id PK
+    int user_id FK
+    varchar sender_name
+    varchar sender_phone
+    text message_text
+    enum status
+    int handled_by_user_id FK
+    datetime resolved_at
+    datetime created_at
+  }
+  milling_appointments {
+    int id PK
+    varchar reference UK
+    int user_id FK
+    int grain_product_id FK
+    varchar customer_name
+    varchar customer_phone
+    varchar grain_name
+    decimal quantity_kg
+    enum grind_level
+    date requested_date
+    date confirmed_date
+    enum status
+    varchar customer_note
+    varchar status_reason
+    int handled_by_user_id FK
+    datetime completed_at
+    datetime created_at
+    datetime updated_at
+  }
+  orders {
+    int id PK
+    varchar reference UK
+    char request_key UK
+    int user_id FK
+    varchar customer_name
+    varchar customer_phone
+    varchar customer_email
+    enum language
+    enum reception_mode
+    varchar delivery_address
+    varchar delivery_city
+    char delivery_postal_code
+    varchar customer_note
+    decimal subtotal
+    decimal delivery_fee
+    decimal total
+    char currency
+    enum status
+    enum payment_method
+    enum payment_status
+    datetime paid_at
+    datetime created_at
+    datetime updated_at
+  }
+  order_items {
+    int id PK
+    int order_id FK
+    int option_id FK
+    varchar product_name_fr
+    varchar product_name_ar
+    varchar variant_name_fr
+    varchar variant_name_ar
+    int weight_g
+    smallint quantity
+    decimal unit_price
+    decimal line_total
+  }
+  order_status_history {
+    int id PK
+    int order_id FK
+    enum from_status
+    enum to_status
+    enum actor_type
+    int actor_user_id FK
+    varchar note
+    datetime created_at
+  }
+  password_reset_tokens {
+    int id PK
+    int user_id FK
+    char token_hash UK
+    datetime expires_at
+    datetime used_at
+    datetime created_at
+  }
+  products {
+    int id PK
+    int category_id FK
+    varchar slug UK
+    varchar name_fr
+    varchar name_ar
+    text description_fr
+    text description_ar
+    enum nut_type
+    tinyint is_visible
+    tinyint is_featured
+    smallint sort_order
+    datetime created_at
+    datetime updated_at
+  }
+  product_images {
+    int id PK
+    int product_id FK
+    varchar file_path
+    varchar alt_fr
+    varchar alt_ar
+    smallint sort_order
+  }
+  product_options {
+    int id PK
+    int variant_id FK
+    varchar sku UK
+    int weight_g
+    decimal price
+    tinyint is_available
+    smallint sort_order
+    datetime updated_at
+  }
+  product_variants {
+    int id PK
+    int product_id FK
+    varchar code
+    varchar name_fr
+    varchar name_ar
+    tinyint is_active
+    smallint sort_order
+  }
+  users {
+    int id PK
+    varchar full_name
+    varchar email UK
+    varchar phone
+    varchar password_hash
+    enum role
+    tinyint is_active
+    enum preferred_language
+    datetime created_at
+    datetime updated_at
+  }
+  user_addresses {
+    int id PK
+    int user_id FK
+    varchar address_line
+    varchar city
+    char postal_code
+    datetime updated_at
+  }
+  users |o--o{ contact_messages : "user_id"
+  users |o--o{ contact_messages : "handled_by_user_id"
+  users |o--o{ milling_appointments : "user_id"
+  users |o--o{ milling_appointments : "handled_by_user_id"
+  products |o--o{ milling_appointments : "grain_product_id"
+  users |o--o{ orders : "user_id"
+  product_options ||--o{ order_items : "option_id"
+  orders ||--o{ order_items : "order_id"
+  users |o--o{ order_status_history : "actor_user_id"
+  orders ||--o{ order_status_history : "order_id"
+  users ||--o{ password_reset_tokens : "user_id"
+  categories ||--o{ products : "category_id"
+  products ||--o{ product_images : "product_id"
+  product_variants ||--o{ product_options : "variant_id"
+  products ||--o{ product_variants : "product_id"
+  users ||--o| user_addresses : "user_id"

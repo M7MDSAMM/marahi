@@ -1,0 +1,21 @@
+/* Petites animations */
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+.category-card:hover .category-discover > span {
+  transform: rotate(90deg);
+}
+.category-discover > span {
+  transition: transform 0.3s;
+}
+@keyframes basketPop {
+  0% {
+    scale: 0.5;
+  }
+  65% {
+    scale: 1.25;
+  }
+  100% {
+    scale: 1;
+  }
+}

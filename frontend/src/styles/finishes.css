@@ -1,0 +1,22 @@
+@media (max-width: 480px) {
+  .catalog-grid .card-add {
+    font-size: 0.75rem;
+  }
+  .catalog-grid .price-row {
+    font-size: 0.85rem;
+  }
+  .catalog-grid .price-row > span {
+    font-size: 0.75rem;
+  }
+}
+.dashboard-panels > .panel {
+  min-width: 0;
+}
+.site-header,
+.site-footer,
+.trust-strip,
+.how-section {
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
+}

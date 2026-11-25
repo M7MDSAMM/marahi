@@ -1,0 +1,24 @@
+digraph G {graph [bgcolor="#fffdf8",pad="0.35",nodesep="0.5",ranksep="0.8",splines=spline]; node [fontname="DejaVu Sans",fontsize=11]; edge [fontname="DejaVu Sans",fontsize=9,color="#8c795d",arrowsize=.7];rankdir=LR;
+node [shape=box,style="rounded,filled",fillcolor="#e7ddc7"];
+visitor [label="Visiteur"];
+customer [label="Client connecte"];
+admin [label="Administrateur"];
+subgraph cluster_site {label="MARAHI HANAN";fontname="DejaVu Sans";color="#c7b58f";style=rounded;
+node [shape=ellipse,fillcolor="#ffffff"];
+browse [label="Consulter / chercher / filtrer"];
+checkout [label="Commander, avec ou sans compte"];
+contact [label="Envoyer un message"];
+milling [label="Demander une mouture"];
+profile [label="Modifier ses informations / adresse"];
+orders [label="Consulter ses commandes de compte"];
+login [label="Creer un compte / se connecter / recuperer l'acces"];
+catalog [label="Gerer produits, variantes, offres, photos"];
+process [label="Traiter commandes et encaissements"];
+approve [label="Confirmer / refuser / terminer les moutures"];
+messages [label="Suivre les messages"];
+stats [label="Consulter le tableau de bord"];
+}
+visitor -> browse;visitor -> checkout;visitor -> contact;visitor -> milling;visitor -> login;
+customer -> browse;customer -> checkout;customer -> contact;customer -> milling;customer -> profile;customer -> orders;
+admin -> catalog;admin -> process;admin -> approve;admin -> messages;admin -> stats;
+}

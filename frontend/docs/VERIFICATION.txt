@@ -1,0 +1,22 @@
+Mise à jour du 25 novembre 2026 — retour aux visuels des maquettes
+
+- Retour des 15 visuels originaux de catégories et produits.
+- Trois images de pots (bsissa, zrir, sésame) retravaillées à partir des originaux, en conservant l’angle, les récipients et le contenu. Fichiers PNG de 1254 x 1254 px. Ces images sont illustratives, et ne sont pas des photos authentiques de la boutique.
+- Fond photographique retiré. L’emblème SVG reprend la meule et l’épi du logo existant avec une palette discrète, adaptée aux thèmes et au RTL.
+- Logo de navigation et organisation du code conservés.
+- Construction npm run build : réussie.
+- 18 fichiers de catalogue (15 originaux + 3 versions améliorées) répondent HTTP 200 via Apache LAMPP.
+- Revue visuelle de l’accueil et du catalogue sur ordinateur, puis en arabe, mode clair et largeur mobile de 390 px. Pas d’image cassée ni de débordement horizontal observé.
+- Frontend toujours de démonstration ; aucune modification du backend ou du modèle de base de données.
+
+Dossier : /home/mohammad/lampp/htdocs/marahi-hanan
+URL : http://localhost/marahi-hanan/
+
+Finitions de la page Grains :
+- Texte centré en groupe dans chaque cercle, noms longs équilibrés sur deux lignes, caractères arabes et français adaptés à leur langue.
+- Cercles distribués régulièrement sur une orbite proportionnelle à la roue ; rayon indépendant de la largeur globale de l’écran.
+- État sélectionné annoncé avec aria-pressed et contour clavier visible.
+- Passage du pois chiche à l’orge : le titre, la photo et le lien de la carte se mettent à jour.
+- Largeurs vérifiées : 320, 390, 768 et 1047 px. Pas de débordement horizontal observé, tous les blocs de texte tiennent dans les cercles. Écart vertical de centrage mesuré inférieur à 0,01 px.
+- Revue en français sombre et arabe clair ; aucune erreur de console observée.
+- CSS spécifique regroupé dans src/styles/grains.css (142 lignes), page Grains.jsx (88 lignes). Construction de production réussie.

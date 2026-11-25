@@ -1,0 +1,173 @@
+MLD - Marahi Hanan
+PK = primary key ; FK -> parent ; UQ = unique (voir SQL pour les contraintes composites)
+
+USERS (
+  PK id
+  full_name
+  email
+  phone
+  password_hash
+  role
+  is_active
+  preferred_language
+  created_at
+  updated_at
+)
+
+USER_ADDRESSES (
+  PK id
+  FK user_id -> users.id
+  address_line
+  city
+  postal_code [NULL]
+  updated_at
+)
+
+CATEGORIES (
+  PK id
+  code
+  name_fr
+  name_ar
+  image_path [NULL]
+  sort_order
+  is_active
+)
+
+PRODUCTS (
+  PK id
+  FK category_id -> categories.id
+  slug
+  name_fr
+  name_ar
+  description_fr
+  description_ar
+  nut_type [NULL]
+  is_visible
+  is_featured
+  sort_order
+  created_at
+  updated_at
+)
+
+PRODUCT_VARIANTS (
+  PK id
+  FK product_id -> products.id
+  code
+  name_fr
+  name_ar
+  is_active
+  sort_order
+)
+
+PRODUCT_OPTIONS (
+  PK id
+  FK variant_id -> product_variants.id
+  sku
+  weight_g
+  price
+  is_available
+  sort_order
+  updated_at
+)
+
+PRODUCT_IMAGES (
+  PK id
+  FK product_id -> products.id
+  file_path
+  alt_fr
+  alt_ar
+  sort_order
+)
+
+ORDERS (
+  PK id
+  reference
+  request_key
+  FK user_id -> users.id [NULL]
+  customer_name
+  customer_phone
+  customer_email [NULL]
+  language
+  reception_mode
+  delivery_address [NULL]
+  delivery_city [NULL]
+  delivery_postal_code [NULL]
+  customer_note [NULL]
+  subtotal
+  delivery_fee
+  total
+  currency
+  status
+  payment_method
+  payment_status
+  paid_at [NULL]
+  created_at
+  updated_at
+)
+
+ORDER_ITEMS (
+  PK id
+  FK order_id -> orders.id
+  FK option_id -> product_options.id
+  product_name_fr
+  product_name_ar
+  variant_name_fr
+  variant_name_ar
+  weight_g
+  quantity
+  unit_price
+  line_total
+)
+
+ORDER_STATUS_HISTORY (
+  PK id
+  FK order_id -> orders.id
+  from_status [NULL]
+  to_status
+  actor_type
+  FK actor_user_id -> users.id [NULL]
+  note [NULL]
+  created_at
+)
+
+MILLING_APPOINTMENTS (
+  PK id
+  reference
+  FK user_id -> users.id [NULL]
+  FK grain_product_id -> products.id [NULL]
+  customer_name
+  customer_phone
+  grain_name
+  quantity_kg
+  grind_level
+  requested_date
+  confirmed_date [NULL]
+  status
+  customer_note [NULL]
+  status_reason [NULL]
+  FK handled_by_user_id -> users.id [NULL]
+  completed_at [NULL]
+  created_at
+  updated_at
+)
+
+CONTACT_MESSAGES (
+  PK id
+  FK user_id -> users.id [NULL]
+  sender_name
+  sender_phone
+  message_text
+  status
+  FK handled_by_user_id -> users.id [NULL]
+  resolved_at [NULL]
+  created_at
+)
+
+PASSWORD_RESET_TOKENS (
+  PK id
+  FK user_id -> users.id
+  token_hash
+  expires_at
+  used_at [NULL]
+  created_at
+)

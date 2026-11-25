@@ -1,0 +1,1719 @@
+{
+  "engine_tested": "10.4.32-MariaDB",
+  "tables": {
+    "categories": [
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف الفئة"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "code",
+        "COLUMN_TYPE": "varchar(40)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رمز ثابت مثل grains أو traditional أو nuts"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "name_fr",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم الفئة بالفرنسية"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "name_ar",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم الفئة بالعربية"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "image_path",
+        "COLUMN_TYPE": "varchar(255)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مسار نسبي لصورة الفئة"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "sort_order",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ترتيب العرض"
+      },
+      {
+        "TABLE_NAME": "categories",
+        "COLUMN_NAME": "is_active",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "1",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الفئة مفعلة أم مخفية"
+      }
+    ],
+    "contact_messages": [
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف الرسالة"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "حساب المرسل إن وجد"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "sender_name",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم المرسل وقت الإرسال"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "sender_phone",
+        "COLUMN_TYPE": "varchar(16)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رقم الاتصال"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "message_text",
+        "COLUMN_TYPE": "text",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مضمون الرسالة؛ حد التطبيق 2000 حرف"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "status",
+        "COLUMN_TYPE": "enum('new','read','closed')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'new'",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "حالة متابعة الرسالة"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "handled_by_user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "المسؤول المتابع"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "resolved_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت إغلاق الرسالة UTC"
+      },
+      {
+        "TABLE_NAME": "contact_messages",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت الإرسال UTC"
+      }
+    ],
+    "milling_appointments": [
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف طلب الرحية"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "reference",
+        "COLUMN_TYPE": "varchar(32)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مرجع الموعد"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "حساب الحريف إن كان مسجلا"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "grain_product_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رابط اختياري لحبوب الكاتالوغ؛ ليس عملية شراء"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "customer_name",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم صاحب الحبوب وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "customer_phone",
+        "COLUMN_TYPE": "varchar(16)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رقم الاتصال وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "grain_name",
+        "COLUMN_TYPE": "varchar(120)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة نوع الحبوب؛ يسمح بطلب حبوب خارج الكاتالوغ"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "quantity_kg",
+        "COLUMN_TYPE": "decimal(8,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وزن حبوب الحريف بالكيلوغرام"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "grind_level",
+        "COLUMN_TYPE": "enum('fine','medium','coarse')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'fine'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "درجة الرحية المطلوبة"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "requested_date",
+        "COLUMN_TYPE": "date",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نهار مطلوب حسب توقيت تونس؛ ليس موعدا مؤكدا"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "confirmed_date",
+        "COLUMN_TYPE": "date",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "النهار المتفق عليه عند التأكيد؛ دون نظام ساعات معقد"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "status",
+        "COLUMN_TYPE": "enum('pending','confirmed','rejected','done','cancelled')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'pending'",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "حالة طلب الرحية"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "customer_note",
+        "COLUMN_TYPE": "varchar(1000)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ملاحظة الحريف"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "status_reason",
+        "COLUMN_TYPE": "varchar(500)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "سبب الرفض أو الإلغاء"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "handled_by_user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "المسؤول الذي تعامل مع الطلب"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "completed_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت إنهاء الخدمة UTC"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت إرسال الطلب UTC"
+      },
+      {
+        "TABLE_NAME": "milling_appointments",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل UTC"
+      }
+    ],
+    "orders": [
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف الطلب الداخلي"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "reference",
+        "COLUMN_TYPE": "varchar(32)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مرجع ظاهر للحريف؛ ليس وسيلة تفويض للوصول"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "request_key",
+        "COLUMN_TYPE": "char(36)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مفتاح محاولة الطلب لمنع تكرار التسجيل عند إعادة الإرسال"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "NULL للزائر؛ للخادم وحده حق تحديد صاحب الحساب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "customer_name",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة الاسم وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "customer_phone",
+        "COLUMN_TYPE": "varchar(16)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة الهاتف وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "customer_email",
+        "COLUMN_TYPE": "varchar(190)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "بريد اختياري وقت الطلب؛ لا يثبت ملكية الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "language",
+        "COLUMN_TYPE": "enum('fr','ar')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'fr'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "لغة الطلب والمراسلة"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "reception_mode",
+        "COLUMN_TYPE": "enum('pickup','delivery')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "استلام من الطاحونة أو توصيل"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "delivery_address",
+        "COLUMN_TYPE": "varchar(300)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة عنوان التوصيل؛ NULL عند الاستلام من المحل"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "delivery_city",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة المدينة وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "delivery_postal_code",
+        "COLUMN_TYPE": "char(4)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة الترقيم البريدي إن توفر"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "customer_note",
+        "COLUMN_TYPE": "varchar(1000)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ملاحظة الحريف"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "subtotal",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مجموع السطور؛ يحسبه الخادم من الأسعار الموثوقة"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "delivery_fee",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0.000",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "معلوم التوصيل المتفق عليه وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "total",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "subtotal + delivery_fee بالدينار التونسي"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "currency",
+        "COLUMN_TYPE": "char(3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'TND'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "عملة واحدة في النسخة الحالية"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "status",
+        "COLUMN_TYPE": "enum('pending','preparing','shipping','delivered','cancelled')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'pending'",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "حالة الطلب"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "payment_method",
+        "COLUMN_TYPE": "enum('cash_on_receipt')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'cash_on_receipt'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نقدا عند الاستلام؛ لا دفع إلكتروني"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "payment_status",
+        "COLUMN_TYPE": "enum('unpaid','paid')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'unpaid'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "يسجل paid فقط عند التسليم الفعلي"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "paid_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت تحصيل المبلغ UTC"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت الطلب UTC"
+      },
+      {
+        "TABLE_NAME": "orders",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل UTC"
+      }
+    ],
+    "order_items": [
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف سطر الطلب"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "order_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الطلب المالك للسطر"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "option_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "العبوة الأصلية؛ يمنع حذفها بعد بيعها"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "product_name_fr",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة اسم المنتوج بالفرنسية وقت البيع"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "product_name_ar",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة اسم المنتوج بالعربية وقت البيع"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "variant_name_fr",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة النوع بالفرنسية وقت البيع"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "variant_name_ar",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة النوع بالعربية وقت البيع"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "weight_g",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة وزن عبوة واحدة بالغرام"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "quantity",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "عدد العبوات من 1 إلى 99"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "unit_price",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نسخة سعر العبوة وقت الطلب"
+      },
+      {
+        "TABLE_NAME": "order_items",
+        "COLUMN_NAME": "line_total",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "quantity مضروبة في unit_price"
+      }
+    ],
+    "order_status_history": [
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف الحدث"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "order_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الطلب المرتبط بالحدث"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "from_status",
+        "COLUMN_TYPE": "enum('pending','preparing','shipping','delivered','cancelled')",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "NULL في حدث الإنشاء الأول"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "to_status",
+        "COLUMN_TYPE": "enum('pending','preparing','shipping','delivered','cancelled')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الحالة الجديدة"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "actor_type",
+        "COLUMN_TYPE": "enum('guest','customer','admin','system')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "صفة من أحدث التغيير وقت الحدث"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "actor_user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الحساب المنفذ إن وجد"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "note",
+        "COLUMN_TYPE": "varchar(500)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "سبب الإلغاء أو ملاحظة إدارية"
+      },
+      {
+        "TABLE_NAME": "order_status_history",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "توقيت الحدث UTC"
+      }
+    ],
+    "password_reset_tokens": [
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف طلب الاسترجاع"
+      },
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "صاحب الحساب"
+      },
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "token_hash",
+        "COLUMN_TYPE": "char(64)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "SHA-256 لرمز عشوائي قوي؛ ليس هاش كلمة السر"
+      },
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "expires_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت انتهاء صلاحية الرمز UTC"
+      },
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "used_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت استعماله؛ NULL يعني لم يستعمل"
+      },
+      {
+        "TABLE_NAME": "password_reset_tokens",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت الإصدار UTC"
+      }
+    ],
+    "products": [
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف المنتوج"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "category_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "فئة واحدة لكل منتوج"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "slug",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رمز رابط ثابت؛ يقابل id النصي في React حاليا"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "name_fr",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم المنتوج بالفرنسية"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "name_ar",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم المنتوج بالعربية"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "description_fr",
+        "COLUMN_TYPE": "text",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وصف المنتوج بالفرنسية"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "description_ar",
+        "COLUMN_TYPE": "text",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وصف المنتوج بالعربية"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "nut_type",
+        "COLUMN_TYPE": "enum('nuts','dried')",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "فلتر الفواكه الجافة فقط؛ NULL في الأصناف الأخرى"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "is_visible",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "1",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "إظهار المنتوج في الكاتالوغ"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "is_featured",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "إظهاره ضمن المنتوجات المفضلة"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "sort_order",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ترتيب العرض"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت الإنشاء UTC"
+      },
+      {
+        "TABLE_NAME": "products",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل UTC"
+      }
+    ],
+    "product_images": [
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف الصورة"
+      },
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "product_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "المنتوج صاحب الصورة"
+      },
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "file_path",
+        "COLUMN_TYPE": "varchar(255)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مسار الملف النسبي؛ الصورة ليست BLOB ولا base64"
+      },
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "alt_fr",
+        "COLUMN_TYPE": "varchar(150)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "''",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نص بديل فرنسي"
+      },
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "alt_ar",
+        "COLUMN_TYPE": "varchar(150)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "''",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نص بديل عربي"
+      },
+      {
+        "TABLE_NAME": "product_images",
+        "COLUMN_NAME": "sort_order",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "أول صورة حسب الترتيب ثم id هي الغلاف"
+      }
+    ],
+    "product_options": [
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف العبوة القابلة للبيع؛ ترسله السلة للباك إند"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "variant_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "نوع واحد لهذه العبوة"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "sku",
+        "COLUMN_TYPE": "varchar(60)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رمز فريد للعبوة في الكاتالوغ"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "weight_g",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وزن العبوة بالغرام؛ ليس وزن السطر كله"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "price",
+        "COLUMN_TYPE": "decimal(12,3)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "سعر عبوة واحدة بالدينار التونسي"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "is_available",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "1",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "توفر يدوي؛ ليس عدادا للمخزون"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "sort_order",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ترتيب الأوزان والوزن الافتراضي داخل النوع"
+      },
+      {
+        "TABLE_NAME": "product_options",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل للسعر أو التوفر UTC"
+      }
+    ],
+    "product_variants": [
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف النوع أو الرحية"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "product_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "MUL",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "المنتوج المالك للنوع"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "code",
+        "COLUMN_TYPE": "varchar(60)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "رمز النوع داخل المنتوج؛ مثل pistache"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "name_fr",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم النوع بالفرنسية"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "name_ar",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "اسم النوع بالعربية"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "is_active",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "1",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "السماح باختيار النوع"
+      },
+      {
+        "TABLE_NAME": "product_variants",
+        "COLUMN_NAME": "sort_order",
+        "COLUMN_TYPE": "smallint(5) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "0",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "أول نوع مفعّل هو الاختيار الافتراضي"
+      }
+    ],
+    "users": [
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف المستخدم الداخلي"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "full_name",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الاسم الكامل"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "email",
+        "COLUMN_TYPE": "varchar(190)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "بريد الدخول؛ يطبّعه الخادم إلى lowercase"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "phone",
+        "COLUMN_TYPE": "varchar(16)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الهاتف بصيغة +216 ثم ثمانية أرقام"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "password_hash",
+        "COLUMN_TYPE": "varchar(255)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "هاش كلمة السر؛ لا تحفظ كلمة السر الأصلية"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "role",
+        "COLUMN_TYPE": "enum('customer','admin')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'customer'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "دور واحد بسيط لكل مستخدم"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "is_active",
+        "COLUMN_TYPE": "tinyint(1)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "1",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "تفعيل الحساب أو تعطيله"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "preferred_language",
+        "COLUMN_TYPE": "enum('fr','ar')",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "'fr'",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "لغة المراسلات الخاصة بالحساب"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "created_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "وقت الإنشاء UTC"
+      },
+      {
+        "TABLE_NAME": "users",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل UTC"
+      }
+    ],
+    "user_addresses": [
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "PRI",
+        "EXTRA": "auto_increment",
+        "COLUMN_COMMENT": "معرّف العنوان"
+      },
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "user_id",
+        "COLUMN_TYPE": "int(10) unsigned",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "UNI",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "مالك العنوان؛ عنوان محفوظ واحد فقط للحساب"
+      },
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "address_line",
+        "COLUMN_TYPE": "varchar(300)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "الشارع ورقم المنزل والتفاصيل"
+      },
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "city",
+        "COLUMN_TYPE": "varchar(100)",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": null,
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "المدينة أو المعتمدية"
+      },
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "postal_code",
+        "COLUMN_TYPE": "char(4)",
+        "IS_NULLABLE": "YES",
+        "COLUMN_DEFAULT": "NULL",
+        "COLUMN_KEY": "",
+        "EXTRA": "",
+        "COLUMN_COMMENT": "ترقيم بريدي اختياري؛ نص لحفظ الأصفار"
+      },
+      {
+        "TABLE_NAME": "user_addresses",
+        "COLUMN_NAME": "updated_at",
+        "COLUMN_TYPE": "datetime",
+        "IS_NULLABLE": "NO",
+        "COLUMN_DEFAULT": "current_timestamp()",
+        "COLUMN_KEY": "",
+        "EXTRA": "on update current_timestamp()",
+        "COLUMN_COMMENT": "آخر تعديل UTC"
+      }
+    ]
+  },
+  "relations": [
+    {
+      "TABLE_NAME": "contact_messages",
+      "COLUMN_NAME": "user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_message_user"
+    },
+    {
+      "TABLE_NAME": "contact_messages",
+      "COLUMN_NAME": "handled_by_user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_message_handler"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "COLUMN_NAME": "user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_appointment_user"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "COLUMN_NAME": "handled_by_user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_appointment_handler"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "COLUMN_NAME": "grain_product_id",
+      "REFERENCED_TABLE_NAME": "products",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_appointment_grain"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "COLUMN_NAME": "user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_order_user"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "COLUMN_NAME": "option_id",
+      "REFERENCED_TABLE_NAME": "product_options",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_item_option"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_item_order"
+    },
+    {
+      "TABLE_NAME": "order_status_history",
+      "COLUMN_NAME": "actor_user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_history_actor"
+    },
+    {
+      "TABLE_NAME": "order_status_history",
+      "COLUMN_NAME": "order_id",
+      "REFERENCED_TABLE_NAME": "orders",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_history_order"
+    },
+    {
+      "TABLE_NAME": "password_reset_tokens",
+      "COLUMN_NAME": "user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_reset_user"
+    },
+    {
+      "TABLE_NAME": "products",
+      "COLUMN_NAME": "category_id",
+      "REFERENCED_TABLE_NAME": "categories",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_product_category"
+    },
+    {
+      "TABLE_NAME": "product_images",
+      "COLUMN_NAME": "product_id",
+      "REFERENCED_TABLE_NAME": "products",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_image_product"
+    },
+    {
+      "TABLE_NAME": "product_options",
+      "COLUMN_NAME": "variant_id",
+      "REFERENCED_TABLE_NAME": "product_variants",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_option_variant"
+    },
+    {
+      "TABLE_NAME": "product_variants",
+      "COLUMN_NAME": "product_id",
+      "REFERENCED_TABLE_NAME": "products",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_variant_product"
+    },
+    {
+      "TABLE_NAME": "user_addresses",
+      "COLUMN_NAME": "user_id",
+      "REFERENCED_TABLE_NAME": "users",
+      "REFERENCED_COLUMN_NAME": "id",
+      "CONSTRAINT_NAME": "fk_address_user"
+    }
+  ],
+  "indexes": [
+    {
+      "TABLE_NAME": "categories",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "categories",
+      "INDEX_NAME": "uq_category_code",
+      "NON_UNIQUE": 0,
+      "columns_list": "code"
+    },
+    {
+      "TABLE_NAME": "contact_messages",
+      "INDEX_NAME": "fk_message_handler",
+      "NON_UNIQUE": 1,
+      "columns_list": "handled_by_user_id"
+    },
+    {
+      "TABLE_NAME": "contact_messages",
+      "INDEX_NAME": "fk_message_user",
+      "NON_UNIQUE": 1,
+      "columns_list": "user_id"
+    },
+    {
+      "TABLE_NAME": "contact_messages",
+      "INDEX_NAME": "ix_message_queue",
+      "NON_UNIQUE": 1,
+      "columns_list": "status,created_at"
+    },
+    {
+      "TABLE_NAME": "contact_messages",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "fk_appointment_grain",
+      "NON_UNIQUE": 1,
+      "columns_list": "grain_product_id"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "fk_appointment_handler",
+      "NON_UNIQUE": 1,
+      "columns_list": "handled_by_user_id"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "ix_appointment_customer",
+      "NON_UNIQUE": 1,
+      "columns_list": "user_id,created_at"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "ix_appointment_queue",
+      "NON_UNIQUE": 1,
+      "columns_list": "status,requested_date"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "milling_appointments",
+      "INDEX_NAME": "uq_appointment_reference",
+      "NON_UNIQUE": 0,
+      "columns_list": "reference"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "INDEX_NAME": "ix_order_customer",
+      "NON_UNIQUE": 1,
+      "columns_list": "user_id,created_at"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "INDEX_NAME": "ix_order_queue",
+      "NON_UNIQUE": 1,
+      "columns_list": "status,created_at"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "INDEX_NAME": "uq_order_reference",
+      "NON_UNIQUE": 0,
+      "columns_list": "reference"
+    },
+    {
+      "TABLE_NAME": "orders",
+      "INDEX_NAME": "uq_order_request",
+      "NON_UNIQUE": 0,
+      "columns_list": "request_key"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "INDEX_NAME": "fk_item_option",
+      "NON_UNIQUE": 1,
+      "columns_list": "option_id"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "order_items",
+      "INDEX_NAME": "uq_order_item_option",
+      "NON_UNIQUE": 0,
+      "columns_list": "order_id,option_id"
+    },
+    {
+      "TABLE_NAME": "order_status_history",
+      "INDEX_NAME": "fk_history_actor",
+      "NON_UNIQUE": 1,
+      "columns_list": "actor_user_id"
+    },
+    {
+      "TABLE_NAME": "order_status_history",
+      "INDEX_NAME": "ix_history_order",
+      "NON_UNIQUE": 1,
+      "columns_list": "order_id,created_at,id"
+    },
+    {
+      "TABLE_NAME": "order_status_history",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "password_reset_tokens",
+      "INDEX_NAME": "ix_reset_user",
+      "NON_UNIQUE": 1,
+      "columns_list": "user_id,used_at,expires_at"
+    },
+    {
+      "TABLE_NAME": "password_reset_tokens",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "password_reset_tokens",
+      "INDEX_NAME": "uq_reset_hash",
+      "NON_UNIQUE": 0,
+      "columns_list": "token_hash"
+    },
+    {
+      "TABLE_NAME": "products",
+      "INDEX_NAME": "ix_product_catalog",
+      "NON_UNIQUE": 1,
+      "columns_list": "category_id,is_visible,sort_order"
+    },
+    {
+      "TABLE_NAME": "products",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "products",
+      "INDEX_NAME": "uq_product_slug",
+      "NON_UNIQUE": 0,
+      "columns_list": "slug"
+    },
+    {
+      "TABLE_NAME": "product_images",
+      "INDEX_NAME": "ix_image_cover",
+      "NON_UNIQUE": 1,
+      "columns_list": "product_id,sort_order,id"
+    },
+    {
+      "TABLE_NAME": "product_images",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "product_options",
+      "INDEX_NAME": "ix_option_listing",
+      "NON_UNIQUE": 1,
+      "columns_list": "variant_id,is_available,sort_order"
+    },
+    {
+      "TABLE_NAME": "product_options",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "product_options",
+      "INDEX_NAME": "uq_option_sku",
+      "NON_UNIQUE": 0,
+      "columns_list": "sku"
+    },
+    {
+      "TABLE_NAME": "product_options",
+      "INDEX_NAME": "uq_option_weight",
+      "NON_UNIQUE": 0,
+      "columns_list": "variant_id,weight_g"
+    },
+    {
+      "TABLE_NAME": "product_variants",
+      "INDEX_NAME": "ix_variant_listing",
+      "NON_UNIQUE": 1,
+      "columns_list": "product_id,is_active,sort_order"
+    },
+    {
+      "TABLE_NAME": "product_variants",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "product_variants",
+      "INDEX_NAME": "uq_variant_code",
+      "NON_UNIQUE": 0,
+      "columns_list": "product_id,code"
+    },
+    {
+      "TABLE_NAME": "users",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "users",
+      "INDEX_NAME": "uq_users_email",
+      "NON_UNIQUE": 0,
+      "columns_list": "email"
+    },
+    {
+      "TABLE_NAME": "user_addresses",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "columns_list": "id"
+    },
+    {
+      "TABLE_NAME": "user_addresses",
+      "INDEX_NAME": "uq_address_user",
+      "NON_UNIQUE": 0,
+      "columns_list": "user_id"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920"><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#86632a"/></marker></defs><rect width="1400" height="920" fill="#fffdf8"/>
+<text x="700" y="42" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" fill="#392d1c">CHECKOUT : une commande complete ou aucune commande</text>
+<rect x="30" y="75" width="160" height="55" rx="9" fill="#342719"/><path d="M110 130V810" stroke="#cdbd9e" stroke-dasharray="6 5"/>
+<text x="110" y="109" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" fill="#fff4dd">Client</text>
+<rect x="360" y="75" width="160" height="55" rx="9" fill="#342719"/><path d="M440 130V810" stroke="#cdbd9e" stroke-dasharray="6 5"/>
+<text x="440" y="109" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" fill="#fff4dd">React</text>
+<rect x="720" y="75" width="160" height="55" rx="9" fill="#342719"/><path d="M800 130V810" stroke="#cdbd9e" stroke-dasharray="6 5"/>
+<text x="800" y="109" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" fill="#fff4dd">API</text>
+<rect x="1140" y="75" width="160" height="55" rx="9" fill="#342719"/><path d="M1220 130V810" stroke="#cdbd9e" stroke-dasharray="6 5"/>
+<text x="1220" y="109" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" fill="#fff4dd">MariaDB</text>
+<rect x="700" y="330" width="590" height="370" rx="12" fill="none" stroke="#c6a45e" stroke-width="2"/>
+<text x="713" y="352" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#9d752e">TRANSACTION</text>
+<path d="M110 185H440" stroke="#86632a" stroke-width="1.6"  marker-end="url(#arrow)"/>
+<text x="275.0" y="172" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Choisir offres + quantites</text>
+<path d="M440 250H800" stroke="#86632a" stroke-width="1.6"  marker-end="url(#arrow)"/>
+<text x="620.0" y="237" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">POST /orders + request_key</text>
+<path d="M800 288h55v26h-55" stroke="#86632a" fill="none" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="875" y="304" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Valider session et formulaire</text>
+<path d="M800 390H1220" stroke="#86632a" stroke-width="1.6"  marker-end="url(#arrow)"/>
+<text x="1010.0" y="377" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">BEGIN ; lire / verrouiller les offres</text>
+<path d="M1220 445H800" stroke="#86632a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="1010.0" y="432" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Prix et disponibilites fiables</text>
+<path d="M800 488h55v26h-55" stroke="#86632a" fill="none" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="875" y="504" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Comparer / calculer le total</text>
+<path d="M800 555H1220" stroke="#86632a" stroke-width="1.6"  marker-end="url(#arrow)"/>
+<text x="1010.0" y="542" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">INSERT order + items + history</text>
+<path d="M800 620H1220" stroke="#86632a" stroke-width="1.6"  marker-end="url(#arrow)"/>
+<text x="1010.0" y="607" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">COMMIT</text>
+<path d="M1220 675H800" stroke="#86632a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="1010.0" y="662" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Validation terminee</text>
+<path d="M800 735H440" stroke="#86632a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="620.0" y="722" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">201 : reference + total</text>
+<path d="M440 790H110" stroke="#86632a" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="275.0" y="777" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" fill="#392d1c">Confirmation ; vider le panier</text>
+<rect x="70" y="835" width="1260" height="58" rx="10" fill="#f1e8d8"/>
+<text x="700" y="869" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" fill="#392d1c">Erreur : ROLLBACK. Panier conserve. Reessai avec la meme cle, sans commande en double.</text>
+</svg>

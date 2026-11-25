@@ -1,0 +1,119 @@
+{
+  "engine": "MariaDB 10.4.32 (isolated temporary instance, no TCP listener)",
+  "test_count": 22,
+  "passed": 22,
+  "products": 12,
+  "options": 53,
+  "tests": [
+    {
+      "test": "Foreign key: reject unknown category",
+      "passed": true,
+      "result": "rejected (1452)"
+    },
+    {
+      "test": "Price: reject negative value",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Weight: reject zero",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Quantity: reject zero",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Line amount: reject mismatch",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Order amount: reject mismatch",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Pickup: reject delivery fees",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Delivery: reject blank address",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Payment: reject paid before handover",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Delivery: reject handed-over without payment",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Sold SKU: protect against hard deletion",
+      "passed": true,
+      "result": "rejected (1451)"
+    },
+    {
+      "test": "Phone: reject wrong country format",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Address: one saved address per user",
+      "passed": true,
+      "result": "rejected (1062)"
+    },
+    {
+      "test": "Request key: reject duplicate checkout",
+      "passed": true,
+      "result": "rejected (1062)"
+    },
+    {
+      "test": "Appointment: require rejection reason",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Appointment: reject zero kg",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Message: reject whitespace only",
+      "passed": true,
+      "result": "rejected (4025)"
+    },
+    {
+      "test": "Email: reject duplicate ignoring letter case",
+      "passed": true,
+      "result": "rejected (1062)"
+    },
+    {
+      "test": "Guest order: NULL user accepted",
+      "passed": true,
+      "result": "accepted"
+    },
+    {
+      "test": "Archive sold product: visibility may change",
+      "passed": true,
+      "result": "accepted"
+    },
+    {
+      "test": "Old order survives catalogue price change",
+      "passed": true,
+      "result": "(Decimal('25.000'), Decimal('50.000'))"
+    },
+    {
+      "test": "All seeded totals equal the sum of their lines",
+      "passed": true,
+      "result": "0 inconsistent orders"
+    }
+  ]
+}
